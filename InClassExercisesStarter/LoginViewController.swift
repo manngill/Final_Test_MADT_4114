@@ -7,7 +7,7 @@
 //
  import UIKit
  import FirebaseAuth
- import WebKit
+
 
  class LoginViewController: UIViewController {
     
@@ -100,6 +100,8 @@
 
    override func viewDidLoad() {
     super.viewDidLoad()
+    
+      let currentUser = Auth.auth().currentUser;
     
     // Do any additional setup after loading the view.
  }

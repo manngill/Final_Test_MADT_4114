@@ -46,6 +46,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("got a restaurant location")
+        
+        if (locations.count == 0) {
+            print("Error getting your location!")
+            return
+        }
+        else {
+            print(locations[0])
+        }
+        
+    }
+    
+    
+    
     // Mark:  Actions
     
     
