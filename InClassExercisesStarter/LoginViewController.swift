@@ -7,6 +7,7 @@
 //
  import UIKit
  import FirebaseAuth
+ import WebKit
 
  class LoginViewController: UIViewController {
     
@@ -94,7 +95,20 @@
         // HINT:  The name of the segue that goes to the next screen is: segueLoginSignup
         // You can check the name by going to Main.storyboard > clicking on segue > looking at Attributes Inspector
         
-    }
+
+
+
+   override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    // Do any additional setup after loading the view.
+ }
+
+  override func didReceiveMemoryWarning() {
+    super.didReceiveMemoryWarning()
+    // Dispose of any resources that can be recreated.
+ }
+
     
     /*
     // MARK: - Navigation
@@ -105,4 +119,4 @@
         // Pass the selected object to the new view controller.
     }
     */
-
+}

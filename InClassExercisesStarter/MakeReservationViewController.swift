@@ -32,16 +32,27 @@ class MakeReservationViewController: UIViewController {
         db.settings = settings
     }
 
+   
+    // MARK: Actions
+    @IBAction func buttonPressed(_ sender: Any) {
+        
+        let submit = db.collection("reservation")
+        submit.document().setData([
+            "Name": self.nameTextField.text!,
+            "Day": self.dayTextField.text!,
+            "Number of seats": self.seatsTextField.text!
+            ])
+        
+        print("Reservation done!");
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
-    // MARK: Actions
-    @IBAction func buttonPressed(_ sender: Any) {
-        print("pressed the button")
-    }
     
     
     
