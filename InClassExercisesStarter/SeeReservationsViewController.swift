@@ -29,6 +29,59 @@ class SeeReservationsViewController: UIViewController {
         let settings = db.settings
         settings.areTimestampsInSnapshotsEnabled = true
         db.settings = settings
+        
+        db.collection("reservations").getDocuments() {
+            
+            (x, error) in
+            
+            
+            
+            if (x == nil) {
+                
+                print("Error fetching document: \(error!)")
+                
+                return
+                
+            }
+            
+            
+            
+            x?.documentChanges.forEach({
+                
+                (diff) in
+                
+                
+                
+                if (diff.type == DocumentChangeType.added) {
+                    
+                    // something was added
+                    
+                    let data = diff.document.data()     // get the document that was added
+                    
+                    let name = data["Name"] as! String
+                    
+                    let day = data["Day"] as! String
+                    
+                    let seats = data["Seats available"] as! integer
+                    
+                    print(name)
+                    
+                    print(day)
+                    
+                    print(seats)
+                    
+                    
+                    
+                    self.showDatabase.text = self.showDatabase.text + "\n Name: \(name) \n Day: \(day) \n   total number of seats: \(seats) \n-----------\n"
+                    
+                }
+                
+            })
+            
+        }
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

@@ -10,7 +10,7 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
 
-    var items = ["Apple", "banana"]
+    var items = ["Restaurant Map", "Make a Reservation" , " Show Reservation"]
     
     
     override func viewDidLoad() {
@@ -38,6 +38,8 @@ class MenuTableViewController: UITableViewController {
         cell.textLabel?.text = "Put restaurant name here"
         return cell
     }
+    
+    
     
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -53,6 +53,43 @@ class TableViewController: UITableViewController {
         return cell
     }
     
+    var index: Int!
+    
+    //label.text = ("You tapped the cell at index \(index)")
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // do stuff when person clicks on a row
+        print("Person clicked on something")
+        print(indexPath.row)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let indexPath = tableView.indexPathForSelectedRow
+        // Get the Row of the Index Path and set as index
+        let index = indexPath?.row
+        if (index  == 0)
+        {
+            // Get in touch with the DetailViewController
+            let RestaurantCostomer = segue.destination as! MapViewController
+            // Pass on the data to the Detail ViewController by setting it's indexPathRow value
+            //tomerController.index = index!
+            
+        }
+            
+        else{
+            // let customerController = segue.destination as! DepositViewController
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "deposit")
+            // self.present(controller, animated: true, completion: nil)
+            self.navigationController?.pushViewController(controller, animated: true)
+        }
+        
+    }
+    
+    
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         
@@ -60,6 +97,7 @@ class TableViewController: UITableViewController {
         
         if (i == 0) {
             print("Going to the PINK page")
+               let RestaurantCostomer = segue.destination as! MapViewController
             performSegue(withIdentifier: "segueA", sender: self)
         }
         else if (i == 1) {

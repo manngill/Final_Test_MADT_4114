@@ -23,6 +23,16 @@ class RestaurantMapViewController: UIViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+        
+        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+            if (overlay is MKPolyline) {
+                let r = MKPolylineRenderer(overlay: overlay)
+                r.strokeColor = UIColor.magenta
+                r.lineWidth = 10                   
+                return r
+            }
+            return MKOverlayRenderer()
+        
     }
     
 
@@ -32,14 +42,25 @@ class RestaurantMapViewController: UIViewController {
         
         print("zoom in!")
         
-        // HINT: Check MapExamples/ViewController.swift
+        var r = mapView.region
+        
+        print("Current zoom: \(r.span.latitudeDelta)")
+        
+        r.span.latitudeDelta = r.span.latitudeDelta / 4
+        r.span.longitudeDelta = r.span.longitudeDelta / 4
+        print("New zoom: \(r.span.latitudeDelta)")
+        print("-=------")
+        self.mapView.setRegion(r, animated: true)
     }
     
     @IBAction func zoomOutPressed(_ sender: Any) {
         // zoom out
         print("zoom out!")
         
-        // HINT: Check MapExamples/ViewController.swift
+        var r = mapView.region
+        r.span.latitudeDelta = r.span.latitudeDelta * 2
+        r.span.longitudeDelta = r.span.longitudeDelta * 2
+        self.mapView.setRegion(r, animated: true)
     }
     
     /*
@@ -52,4 +73,5 @@ class RestaurantMapViewController: UIViewController {
     }
     */
 
+}
 }

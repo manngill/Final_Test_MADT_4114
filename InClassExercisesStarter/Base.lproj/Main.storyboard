@@ -325,6 +325,7 @@
                                 <state key="normal" title="Make Reservation"/>
                                 <connections>
                                     <action selector="buttonPressed:" destination="YJd-aH-F1Y" eventType="touchUpInside" id="bY5-1d-ROM"/>
+                                    <segue destination="CfV-n3-lH4" kind="show" identifier="segueR" id="gTp-1Z-I3I"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Put success + error messages here" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdj-O4-6XO">
