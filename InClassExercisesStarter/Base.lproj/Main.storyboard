@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5P-2D-QqU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5P-2D-QqU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -183,6 +183,7 @@
                                 <color key="backgroundColor" red="0.64922531419999996" green="0.99953407049999998" blue="0.83325098980000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+                                    <action selector="btnLogin:" destination="5Ld-cn-haq" eventType="touchUpInside" id="cbM-IQ-CVf"/>
                                     <action selector="loginButtonPressed:" destination="5Ld-cn-haq" eventType="touchUpInside" id="Cuv-IW-FUu"/>
                                 </connections>
                             </button>
@@ -199,6 +200,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="c4E-81-OKl"/>
                     <connections>
+                        <outlet property="txtEmail" destination="JYu-QG-jE5" id="3LI-Yc-6bx"/>
+                        <outlet property="txtMessage" destination="ufh-rV-Yoh" id="dwE-gm-LtD"/>
+                        <outlet property="txtPassword" destination="XWN-mG-Ba1" id="cTD-ln-Jfl"/>
                         <segue destination="irl-Fk-UKc" kind="show" identifier="segueLoginSignup" id="D1g-58-9Kn"/>
                     </connections>
                 </viewController>
