@@ -62,13 +62,13 @@ class SeeReservationsViewController: UIViewController {
                     
                     let day = data["Day"] as! String
                     
-                    let seats = data["Seats available"] as! integer
+                    let seats = data["Seats available"] as!
                     
-                    print(name)
+                    print(name);
                     
-                    print(day)
+                    print(day);
                     
-                    print(seats)
+                    print(seats);
                     
                     
                     

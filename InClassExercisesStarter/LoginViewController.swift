@@ -101,9 +101,23 @@
    override func viewDidLoad() {
     super.viewDidLoad()
     
-      let currentUser = Auth.auth().currentUser;
-    
-    // Do any additional setup after loading the view.
+    var user = ""
+    if UserDefaults.standard.object(forKey: "userId") != nil
+    {
+        user =  UserDefaults.standard.string(forKey: "userId")!
+        print("User ", user)
+        
+        print("user info" )
+        
+        //self.performSegue(withIdentifier: "loginSegue", sender: nil)
+        
+        let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableVC") as! MenuTableViewController
+        self.present(newViewController, animated: true, completion: nil)
+        
+        
+    }
+
  }
 
   override func didReceiveMemoryWarning() {

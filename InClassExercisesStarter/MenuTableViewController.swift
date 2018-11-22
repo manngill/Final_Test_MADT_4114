@@ -39,19 +39,31 @@ class MenuTableViewController: UITableViewController {
         return cell
     }
     
-    
-    
-
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let i = indexPath.row
         
         print("Person clicked in row number: \(i)")
         
-        if (i == 1) {
-            performSegue(withIdentifier: "segueMakeReservation", sender: nil)
+        if (i == 0) {
+            performSegue(withIdentifier: "viewRestaurants", sender: nil)
+        }
+            
+        else if (i == 1) {
+            performSegue(withIdentifier: "makeReservation", sender: nil)
+        }
+            
+        else if (i == 2) {
+            performSegue(withIdentifier: "showRestaurants", sender: nil)
         }
         
+        
     }
+
+    
+    
+    
+
+  
 
     /*
     // MARK: - Navigation
