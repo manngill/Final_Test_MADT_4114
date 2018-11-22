@@ -65,7 +65,7 @@ class LoginViewController: UIViewController {
         password  = txtPassword.text!
         
         
-        
+        print("show message")
         
         Auth.auth().createUser(withEmail: email, password: password) {
             
@@ -95,22 +95,7 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var user = ""
-        if UserDefaults.standard.object(forKey: "userId") != nil
-        {
-            user =  UserDefaults.standard.string(forKey: "userId")!
-            print("User Info", user)
-            
-            print("Users" )
-            
-            //self.performSegue(withIdentifier: "loginSegue", sender: nil)
-            
-            let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let newViewController = storyBoard.instantiateViewController(withIdentifier: "tableVC") as! MenuTableViewController
-            self.present(newViewController, animated: true, completion: nil)
-            
-            
-        }
+      
         
     }
     override func didReceiveMemoryWarning() {

@@ -17,7 +17,7 @@ class MakeReservationViewController: UIViewController {
     @IBOutlet weak var dayTextField: UITextField!
     @IBOutlet weak var seatsTextField: UITextField!
     
-    @IBOutlet weak var lblResult: UILabel!
+    //@IBOutlet weak var lblResult: UILabel!
     // Mark: Firestore variables
     var db:Firestore!
     var abc = ""
@@ -46,13 +46,19 @@ class MakeReservationViewController: UIViewController {
     @IBAction func buttonPressed(_ sender: Any) {
         print("pressed the button")
         
-        let rest = db.collection("reservations")
-        rest.document().setData(["username":abc,
-                                "restaurant":nameTextField.text!,
-                                "day":dayTextField.text!,
-                                "numSeats":seatsTextField.text!
+        let res = db.collection("reservations")
+        
+        
+        
+        
+        res.document(abc + nameTextField.text! + dayTextField.text!).setData([
+            "username": abc,
+            "restaurant": nameTextField.text!,
+            "day" : dayTextField.text!,
+            "numSeats": seatsTextField.text!
             ])
-        lblResult.text = "Reservation Successfull. "
+        
+        // lblResult.text = "Reservation Successfull.  Go back and see the reservations menu"
         
         
     }

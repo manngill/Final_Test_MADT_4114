@@ -31,23 +31,23 @@ class SeeReservationsViewController: UIViewController {
         db.settings = settings
         
         db.collection("reservations").getDocuments() {
+            (querySnapshot, err) in
             
-            (x, error) in
-            
-            
-            
-            if (x == nil) {
+            // MARK: FB - Boilerplate code to get data from Firestore
+            if let err = err {
+                print("Error getting data: \(err)")
+            } else {
+                //    let did = document.documentID
                 
-                print("Error fetching document: \(error!)")
-                
-                return
-                
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    var db  = document.data()
+                    //napshot.value["full_name"]
+                    self.textField.text = document["username"] as? String
+                    
+                }
             }
-            
-            
-      
-
-  
+        }
 
     /*
     // MARK: - Navigation
@@ -61,4 +61,4 @@ class SeeReservationsViewController: UIViewController {
 
 }
 }
-}
+s
