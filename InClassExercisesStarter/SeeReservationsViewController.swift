@@ -45,50 +45,9 @@ class SeeReservationsViewController: UIViewController {
             }
             
             
-            
-            x?.documentChanges.forEach({
-                
-                (diff) in
-                
-                
-                
-                if (diff.type == DocumentChangeType.added) {
-                    
-                    // something was added
-                    
-                    let data = diff.document.data()     // get the document that was added
-                    
-                    let name = data["Name"] as! String
-                    
-                    let day = data["Day"] as! String
-                    
-                    let seats = data["Seats available"] as!
-                    
-                    print(name);
-                    
-                    print(day);
-                    
-                    print(seats);
-                    
-                    
-                    
-                    self.showDatabase.text = self.showDatabase.text + "\n Name: \(name) \n Day: \(day) \n   total number of seats: \(seats) \n-----------\n"
-                    
-                }
-                
-            })
-            
-        }
-        
-        
-        
-    }
+      
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+  
 
     /*
     // MARK: - Navigation
@@ -100,4 +59,6 @@ class SeeReservationsViewController: UIViewController {
     }
     */
 
+}
+}
 }
